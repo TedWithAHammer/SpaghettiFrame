@@ -1,6 +1,6 @@
 package com.leo.library.network.retrofit;
 
-import retrofit.http.GET;
+import retrofit2.http.GET;
 import rx.Observable;
 
 /**

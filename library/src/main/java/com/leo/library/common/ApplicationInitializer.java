@@ -2,6 +2,9 @@ package com.leo.library.common;
 
 import android.app.Application;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.leo.bulldoglog.BLog;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -12,11 +15,21 @@ import java.util.concurrent.Executors;
 public class ApplicationInitializer {
     protected ExecutorService cachedThreadScheduler= Executors.newCachedThreadPool();
 
-    public void init(Application application){
+    /**
+     * 并行初始化
+     * @param application
+     */
+    public void init(final Application application){
         cachedThreadScheduler.execute(new Runnable() {
             @Override
             public void run() {
-
+                BLog.init();
+            }
+        });
+        cachedThreadScheduler.execute(new Runnable() {
+            @Override
+            public void run() {
+                Fresco.initialize(application);
             }
         });
     }

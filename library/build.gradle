@@ -25,6 +25,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.leo.wang:bulldoglogger:1.0.2'
     compile 'com.facebook.fresco:fresco:1.0.0'
+
     compile 'io.reactivex:rxjava:1.1.6'
     compile 'io.reactivex:rxandroid:1.2.1'
+
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
 }
