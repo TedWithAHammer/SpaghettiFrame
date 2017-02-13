@@ -1,11 +1,8 @@
 package com.leo.library.network.retrofit;
 
-import com.leo.library.network.okhttp.OkhttpRequestInterceptor;
-import com.leo.library.network.okhttp.OkhttpResponseInterceptor;
+import com.leo.library.network.okhttp.OkHttpManager;
 
-import java.util.IllegalFormatCodePointException;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -17,18 +14,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitApiManager {
     private static RetrofitApiManager retrofitApiManager;
-    private final RetrofitBaseRequestApi retrofitBaseRequestApi;
+    private  RetrofitBaseRequestApi retrofitBaseRequestApi;
 
-    public RetrofitApiManager() {
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                /*添加 Application interceptor(请求) */
-                .addInterceptor(new OkhttpRequestInterceptor())
-                /*添加 Network interceptor(回应) */
-                .addNetworkInterceptor(new OkhttpResponseInterceptor())
-                .build();
-
+    private RetrofitApiManager() {
         Retrofit retrofit = new Retrofit.Builder()
-                .callFactory(okHttpClient)
+                .callFactory(OkHttpManager.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
@@ -42,7 +32,5 @@ public class RetrofitApiManager {
         }
         return retrofitApiManager;
     }
-
-
 
 }

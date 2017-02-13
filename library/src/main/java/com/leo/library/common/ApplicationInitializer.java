@@ -2,6 +2,7 @@ package com.leo.library.common;
 
 import android.app.Application;
 
+
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.leo.bulldoglog.BLog;
 
@@ -20,10 +21,13 @@ public class ApplicationInitializer {
      * @param application
      */
     public void init(final Application application){
+        /* 因为接下来立即使用了该包需同步初始化 */
+        BLog.init();
+        /* 其他初始化任务无时序要求可多线程处理 */
         cachedThreadScheduler.execute(new Runnable() {
             @Override
             public void run() {
-                BLog.init();
+
             }
         });
         cachedThreadScheduler.execute(new Runnable() {

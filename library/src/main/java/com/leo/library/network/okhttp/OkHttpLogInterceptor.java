@@ -15,8 +15,8 @@ import okhttp3.Response;
  * Created by Leo on 2016/8/20.
  */
 
-public class OkhttpRequestInterceptor implements Interceptor {
-    private static final String TAG = "OkhttpRequestInterceptor";
+public class OkHttpLogInterceptor implements Interceptor {
+    private static final String TAG = "OkHttpLogInterceptor";
 
     @Override
     public Response intercept(Chain chain) throws IOException {

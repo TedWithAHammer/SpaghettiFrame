@@ -20,15 +20,20 @@ import rx.internal.schedulers.CachedThreadScheduler;
 public class BaseApplication extends Application {
     private ApplicationInitializer applicationInitializer = new ApplicationInitializer();
     private BaseActivityLifeCircleCallback baseActivityLifeCircleCallback = new BaseActivityLifeCircleCallback();
+    private static Application application;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        application=this;
         applicationInitializer.init(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)
             registerActivityLifecycleCallbacks(baseActivityLifeCircleCallback);
     }
 
+    public static Application getInstance(){
+        return application;
+    }
     /**
      * 获取当前Activity的名字
      *
