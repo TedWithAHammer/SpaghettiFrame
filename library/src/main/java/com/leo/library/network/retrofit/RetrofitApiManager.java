@@ -13,24 +13,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class RetrofitApiManager {
-    private static RetrofitApiManager retrofitApiManager;
-    private  RetrofitBaseRequestApi retrofitBaseRequestApi;
 
-    private RetrofitApiManager() {
+
+    public static RetrofitBaseRequestApi getRetrofitBaseApi() {
         Retrofit retrofit = new Retrofit.Builder()
-                .callFactory(OkHttpManager.build())
+                .callFactory(OkHttpManager.getClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
 
-        retrofitBaseRequestApi = retrofit.create(RetrofitBaseRequestApi.class);
-    }
-
-    public static RetrofitApiManager getInstance() {
-        if (retrofitApiManager == null) {
-            retrofitApiManager = new RetrofitApiManager();
-        }
-        return retrofitApiManager;
+        return retrofit.create(RetrofitBaseRequestApi.class);
     }
 
 }
