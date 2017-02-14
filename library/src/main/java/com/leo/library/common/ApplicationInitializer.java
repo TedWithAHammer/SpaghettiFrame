@@ -18,7 +18,7 @@ import io.realm.RealmConfiguration;
 
 public class ApplicationInitializer {
     private ExecutorService cachedThreadScheduler = Executors.newCachedThreadPool();
-    private static final String DB_NAME = "realm.realm";
+    private static final String DB_NAME = "default.realm";
 
     /**
      * 并行初始化
