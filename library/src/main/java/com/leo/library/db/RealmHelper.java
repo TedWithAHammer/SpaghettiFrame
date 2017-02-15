@@ -22,6 +22,15 @@ public class RealmHelper {
         });
     }
 
+    public static <T extends RealmObject> void insertRealmObject(Realm realm, final T t) {
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.copyToRealm(t);
+            }
+        });
+    }
+
     public static <T extends RealmObject> RealmResults<T> queryRealmObject(Realm realm, Class cls, Map<String, String> queryCondition) {
         RealmQuery<T> realmQuery = (RealmQuery<T>) realm.where(cls);
         for (String key : queryCondition.keySet()) {

@@ -31,6 +31,12 @@ public class BaseApplication extends Application {
             registerActivityLifecycleCallbacks(baseActivityLifeCircleCallback);
     }
 
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+
+    }
+
     public static Application getInstance(){
         return application;
     }
