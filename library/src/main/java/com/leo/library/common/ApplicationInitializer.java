@@ -4,7 +4,10 @@ import android.app.Application;
 
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.github.moduth.blockcanary.BlockCanary;
 import com.leo.bulldoglog.BLog;
+import com.leo.library.monitor.AppBlockCanaryContext;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -44,6 +47,18 @@ public class ApplicationInitializer {
             @Override
             public void run() {
                 Fresco.initialize(application);
+            }
+        });
+        cachedThreadScheduler.execute(new Runnable() {
+            @Override
+            public void run() {
+//                LeakCanary.install(application);
+            }
+        });
+        cachedThreadScheduler.execute(new Runnable() {
+            @Override
+            public void run() {
+//                BlockCanary.install(application,new AppBlockCanaryContext()).start();
             }
         });
     }
