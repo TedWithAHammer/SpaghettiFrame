@@ -8,6 +8,12 @@ import android.os.Build;
 
 import com.leo.library.common.ApplicationInitializer;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Stack;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -25,7 +31,8 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        application=this;
+        application = this;
+        Map<Integer,Integer> searcha=new HashMap<>();
         applicationInitializer.init(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)
             registerActivityLifecycleCallbacks(baseActivityLifeCircleCallback);
@@ -37,9 +44,10 @@ public class BaseApplication extends Application {
 
     }
 
-    public static Application getInstance(){
+    public static Application getInstance() {
         return application;
     }
+
     /**
      * 获取当前Activity的名字
      *
