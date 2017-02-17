@@ -32,7 +32,6 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         application = this;
-        Map<Integer,Integer> searcha=new HashMap<>();
         applicationInitializer.init(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)
             registerActivityLifecycleCallbacks(baseActivityLifeCircleCallback);
