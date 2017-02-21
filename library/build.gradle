@@ -20,9 +20,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.0'
+    compile 'com.android.support:design:24.1.1'
     //log module
     compile 'com.leo.wang:bulldoglogger:1.0.2'
     //image module
@@ -39,9 +40,9 @@ dependencies {
     //ioc module
     compile 'com.leo.wang:potato:1.0.1'
     //leakcanary
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     //blockcanary
-    debugCompile 'com.github.moduth:blockcanary:1.0.1'
-    releaseCompile 'com.github.moduth:blockcanary-no-op:1.0.1'
+    compile 'com.github.markzhai:blockcanary-android:1.4.1'
 }

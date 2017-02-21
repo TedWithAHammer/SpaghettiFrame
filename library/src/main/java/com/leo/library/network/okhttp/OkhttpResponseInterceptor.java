@@ -1,12 +1,10 @@
 package com.leo.library.network.okhttp;
 
 import com.leo.bulldoglog.BLog;
-import com.leo.library.utils.DateUtils;
+import com.leo.library.utils.TimeUtils;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import okhttp3.Interceptor;
@@ -24,10 +22,10 @@ public class OkhttpResponseInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         Response response = chain.proceed(request);
-        BLog.i(TAG, "Time: " + DateUtils.timeMills2DateString(System.nanoTime(), DateUtils.PATTERN1) + "\n"
+        BLog.i(TAG, "Time: " + TimeUtils.millis2String(System.nanoTime()) + "\n"
                 + "Request Info:" + request.url() + "\n" + "Headers:" + request.headers());
         String responseString = new BufferedReader(new InputStreamReader(response.body().byteStream())).readLine();
-        BLog.i(TAG, "Time: " + DateUtils.timeMills2DateString(System.nanoTime(), DateUtils.PATTERN1) + "\n"
+        BLog.i(TAG, "Time: " + TimeUtils.millis2String(System.nanoTime()) + "\n"
                 + "Response Info:" + responseString + "\n" + "Headers:" + request.headers());
         return response;
     }
