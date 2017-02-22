@@ -37,7 +37,6 @@ public class OkHttpManager {
 //                    .cache(new Cache(new File(HTTP_CACHED_DIR), CACHED_MAX_SIZE))
                     //是否需要https验证
 //                    .sslSocketFactory(CertificateManager.getSSLSocketFactory())
-//                    .addInterceptor(new OkHttpCachedInterceptor())
                     .addInterceptor(new OkHttpLogInterceptor())
                     .build();
 

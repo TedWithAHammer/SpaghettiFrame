@@ -18,7 +18,7 @@ import okio.Source;
  * Created by Leo on 2017/2/13.
  */
 
-public class OkHttpCachedInterceptor implements Interceptor {
+public class OkHttpCacheInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         //// TODO: 2017/2/13 功能逻辑待完善

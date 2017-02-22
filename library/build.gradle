@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'realm-android'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 24
@@ -17,7 +18,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
+
+
+apt {
+    arguments {
+        moduleName project.getName();
+    }
+}
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -47,5 +57,8 @@ dependencies {
     compile 'com.github.markzhai:blockcanary-android:1.4.1'
 
     compile 'com.alibaba:fastjson:1.1.56.android'
+    //arouter
+    compile 'com.alibaba:arouter-api:1.0.1'
+    apt 'com.alibaba:arouter-compiler:1.0.1'
 
 }
