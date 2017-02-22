@@ -13,6 +13,24 @@ import io.realm.RealmResults;
  */
 
 public class RealmHelper {
+    /**
+     * 打包realm的获取，释放，不适合多次数据库操作
+     * 同步插入RealmObject
+     *
+     * @param t
+     * @param <T>
+     */
+    public static <T extends RealmObject> void insertRealmObjectAsyncCacheSafe(final T t) {
+        Realm realm = Realm.getDefaultInstance();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.copyToRealm(t);
+            }
+        });
+        realm.close();
+    }
+
     public static <T extends RealmObject> void insertRealmObjectAsync(Realm realm, final T t) {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override

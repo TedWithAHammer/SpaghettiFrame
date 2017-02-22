@@ -72,6 +72,18 @@ public class ImageUtils {
         bitmap.compress(format, 100, baos);
         return baos.toByteArray();
     }
+    /**
+     * bitmap转byteArr
+     *
+     * @param bitmap bitmap对象
+     * @return 字节数组
+     */
+    public static byte[] bitmap2Bytes(Bitmap bitmap) {
+        if (bitmap == null) return null;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(CompressFormat.JPEG, 100, baos);
+        return baos.toByteArray();
+    }
 
     /**
      * byteArr转bitmap
@@ -115,6 +127,15 @@ public class ImageUtils {
      */
     public static Drawable bitmap2Drawable(Resources res, Bitmap bitmap) {
         return bitmap == null ? null : new BitmapDrawable(res, bitmap);
+    }
+    /**
+     * bitmap转drawable
+     *
+     * @param bitmap bitmap对象
+     * @return drawable
+     */
+    public static Drawable bitmap2Drawable(Bitmap bitmap) {
+        return bitmap == null ? null : new BitmapDrawable(bitmap);
     }
 
     /**
