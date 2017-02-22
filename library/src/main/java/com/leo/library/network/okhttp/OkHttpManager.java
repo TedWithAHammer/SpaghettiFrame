@@ -34,10 +34,10 @@ public class OkHttpManager {
         if (okHttpClient == null) {
             okHttpClient = new OkHttpClient.Builder()
                     .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)
-                    .cache(new Cache(new File(HTTP_CACHED_DIR), CACHED_MAX_SIZE))
+//                    .cache(new Cache(new File(HTTP_CACHED_DIR), CACHED_MAX_SIZE))
                     //是否需要https验证
 //                    .sslSocketFactory(CertificateManager.getSSLSocketFactory())
-                    .addInterceptor(new OkHttpCachedInterceptor())
+//                    .addInterceptor(new OkHttpCachedInterceptor())
                     .addInterceptor(new OkHttpLogInterceptor())
                     .build();
 

@@ -45,4 +45,7 @@ dependencies {
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     //blockcanary
     compile 'com.github.markzhai:blockcanary-android:1.4.1'
+
+    compile 'com.alibaba:fastjson:1.1.56.android'
+
 }
