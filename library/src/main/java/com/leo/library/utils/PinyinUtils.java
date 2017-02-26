@@ -3,12 +3,9 @@ package com.leo.library.utils;
 import android.support.v4.util.SimpleArrayMap;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 16/11/16
- *     desc  : 拼音相关工具类
- * </pre>
+ * author: leo
+ * time  : 16/11/16
+ * desc  : 拼音相关工具类
  */
 public class PinyinUtils {
 

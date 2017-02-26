@@ -1,12 +1,9 @@
 package com.leo.library.utils;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/12/5
- *     desc  : 阴历相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/12/5
+ * desc  : 阴历相关工具类
  */
 public class LunarUtils {
 
@@ -190,9 +187,9 @@ public class LunarUtils {
 
     public static class Lunar {
         public boolean isLeap;
-        public int     lunarDay;
-        public int     lunarMonth;
-        public int     lunarYear;
+        public int lunarDay;
+        public int lunarMonth;
+        public int lunarYear;
     }
 
     public static class Solar {

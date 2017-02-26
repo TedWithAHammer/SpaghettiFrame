@@ -17,18 +17,15 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 16/11/13
- *     desc  : 定位相关工具类
- * </pre>
+ * author: leo
+ * time  : 16/11/13
+ * desc  : 定位相关工具类
  */
 public class LocationUtils {
 
     private static OnLocationChangeListener mListener;
-    private static MyLocationListener       myLocationListener;
-    private static LocationManager          mLocationManager;
+    private static MyLocationListener myLocationListener;
+    private static LocationManager mLocationManager;
 
     private LocationUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");

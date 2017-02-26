@@ -11,12 +11,9 @@ import java.io.File;
 import java.io.InputStreamReader;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/8/11
- *     desc  : SD卡相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/8/11
+ * desc  : SD卡相关工具类
  */
 public class SDCardUtils {
 
@@ -115,13 +112,13 @@ public class SDCardUtils {
 
     public static class SDCardInfo {
         boolean isExist;
-        long    totalBlocks;
-        long    freeBlocks;
-        long    availableBlocks;
-        long    blockByteSize;
-        long    totalBytes;
-        long    freeBytes;
-        long    availableBytes;
+        long totalBlocks;
+        long freeBlocks;
+        long availableBlocks;
+        long blockByteSize;
+        long totalBytes;
+        long freeBytes;
+        long availableBytes;
 
         @Override
         public String toString() {

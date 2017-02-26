@@ -15,12 +15,9 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/9/27
- *     desc  : 崩溃相关工具类
- * </pre>
+ * author: Blankj
+ * time  : 2016/9/27
+ * desc  : 崩溃相关工具类
  */
 public class CrashUtils
         implements UncaughtExceptionHandler {
@@ -30,9 +27,9 @@ public class CrashUtils
     private UncaughtExceptionHandler mHandler;
 
     private boolean mInitialized;
-    private String  crashDir;
-    private String  versionName;
-    private int     versionCode;
+    private String crashDir;
+    private String versionName;
+    private int versionCode;
 
     private CrashUtils() {
     }

@@ -17,12 +17,9 @@ import android.widget.LinearLayout;
 import java.lang.reflect.Method;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/9/23
- *     desc  : 栏相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/9/23
+ * desc  : 栏相关工具类
  */
 public class BarUtils {
 

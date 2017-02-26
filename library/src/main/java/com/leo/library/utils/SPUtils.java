@@ -6,23 +6,20 @@ import android.content.SharedPreferences;
 import java.util.Map;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/8/2
- *     desc  : SP相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/8/2
+ * desc  : SP相关工具类
  */
 public class SPUtils {
 
-    private SharedPreferences        sp;
+    private SharedPreferences sp;
     private SharedPreferences.Editor editor;
 
     /**
      * SPUtils构造函数
      * <p>在Application中初始化</p>
      *
-     * @param spName  spName
+     * @param spName spName
      */
     public SPUtils(String spName) {
         sp = Utils.getContext().getSharedPreferences(spName, Context.MODE_PRIVATE);

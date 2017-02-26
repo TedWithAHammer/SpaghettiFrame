@@ -12,12 +12,9 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/9/21
- *     desc  : 日志相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/9/21
+ * desc  : 日志相关工具类
  */
 public class LogUtils {
 
@@ -25,12 +22,12 @@ public class LogUtils {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
-    private static boolean logSwitch      = true;
+    private static boolean logSwitch = true;
     private static boolean log2FileSwitch = false;
-    private static char    logFilter      = 'v';
-    private static String  tag            = "TAG";
-    private static String  dir            = null;
-    private static int     stackIndex     = 0;
+    private static char logFilter = 'v';
+    private static String tag = "TAG";
+    private static String dir = null;
+    private static int stackIndex = 0;
 
     /**
      * 初始化函数
@@ -70,10 +67,10 @@ public class LogUtils {
 
     public static class Builder {
 
-        private boolean logSwitch      = true;
+        private boolean logSwitch = true;
         private boolean log2FileSwitch = false;
-        private char    logFilter      = 'v';
-        private String  tag            = "TAG";
+        private char logFilter = 'v';
+        private String tag = "TAG";
 
         public Builder setLogSwitch(boolean logSwitch) {
             this.logSwitch = logSwitch;

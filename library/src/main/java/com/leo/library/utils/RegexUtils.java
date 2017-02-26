@@ -8,12 +8,9 @@ import java.util.regex.Pattern;
 import static com.leo.library.utils.ConstUtils.*;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/8/2
- *     desc  : 正则相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/8/2
+ * desc  : 正则相关工具类
  */
 public class RegexUtils {
 

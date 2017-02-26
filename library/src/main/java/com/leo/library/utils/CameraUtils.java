@@ -1,12 +1,9 @@
 package com.leo.library.utils;
 
 /**
- * <pre>
- *     author:
- *     blog  :
- *     time  : 2016/9/19
- *     desc  : 相机相关工具类
- * </pre>
+ * author:leo
+ * time  : 2016/9/19
+ * desc  : 相机相关工具类
  */
 public class CameraUtils {
 

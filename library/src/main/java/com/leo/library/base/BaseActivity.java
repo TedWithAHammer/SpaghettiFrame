@@ -23,7 +23,7 @@ import rx.functions.Action1;
  * Created by leo on 2017/2/17.
  */
 
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     protected Realm realm;
 

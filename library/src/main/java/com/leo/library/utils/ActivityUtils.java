@@ -15,12 +15,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/9/23
- *     desc  : Activity相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/9/23
+ * desc  : Activity相关工具类
  */
 public class ActivityUtils {
 
@@ -37,6 +34,7 @@ public class ActivityUtils {
      */
     public static boolean isActivityExists(String packageName, String className) {
         Intent intent = new Intent();
+
         intent.setClassName(packageName, className);
         return !(Utils.getContext().getPackageManager().resolveActivity(intent, 0) == null ||
                 intent.resolveActivity(Utils.getContext().getPackageManager()) == null ||

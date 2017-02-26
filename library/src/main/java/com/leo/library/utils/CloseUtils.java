@@ -5,12 +5,9 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/10/9
- *     desc  : 关闭相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/10/9
+ * desc  : 关闭相关工具类
  */
 public class CloseUtils {
 

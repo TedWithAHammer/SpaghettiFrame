@@ -3,12 +3,9 @@ package com.leo.library.utils;
 import java.io.File;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/9/27
- *     desc  : 清除相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/9/27
+ * desc  : 清除相关工具类
  */
 public class CleanUtils {
 
@@ -50,10 +47,10 @@ public class CleanUtils {
      * 根据名称清除数据库
      * <p>/data/data/com.xxx.xxx/databases/dbName</p>
      *
-     * @param dbName  数据库名称
+     * @param dbName 数据库名称
      * @return {@code true}: 清除成功<br>{@code false}: 清除失败
      */
-    public static boolean cleanInternalDbByName( String dbName) {
+    public static boolean cleanInternalDbByName(String dbName) {
         return Utils.getContext().deleteDatabase(dbName);
     }
 

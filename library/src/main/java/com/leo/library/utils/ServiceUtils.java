@@ -18,12 +18,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/8/2
- *     desc  : 服务相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/8/2
+ * desc  : 服务相关工具类
  */
 public class ServiceUtils {
 

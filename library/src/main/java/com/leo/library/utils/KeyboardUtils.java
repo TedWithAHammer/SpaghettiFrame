@@ -8,12 +8,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2016/8/2
- *     desc  : 键盘相关工具类
- * </pre>
+ * author: leo
+ * time  : 2016/8/2
+ * desc  : 键盘相关工具类
  */
 public class KeyboardUtils {
 
