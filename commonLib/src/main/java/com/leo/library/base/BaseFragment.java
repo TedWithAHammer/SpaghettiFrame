@@ -21,7 +21,7 @@ import rx.functions.Action1;
  */
 
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
-    protected Activity attachedActivity;
+    protected WeakReference<Activity> refAttachedActivity;
     protected String fragmentTag;
     protected Realm realm;
     protected T presenter;
@@ -32,10 +32,17 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
         fragmentTag = tag;
     }
 
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        attachedActivity = activity;
+        refAttachedActivity = new WeakReference<Activity>(activity);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        refAttachedActivity.clear();
     }
 
     @Override
@@ -43,9 +50,9 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
         super.onCreate(savedInstanceState);
         realm = Realm.getDefaultInstance();
         presenter = createPresenter();
+        initialFragment();
     }
 
-    protected abstract T createPresenter();
 
     @Override
     public void onDestroy() {
@@ -54,6 +61,10 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
             realm.close();
         releaseRxBus();
     }
+
+    protected abstract void initialFragment();
+
+    protected abstract T createPresenter();
 
     /**
      * 发送消息总线
